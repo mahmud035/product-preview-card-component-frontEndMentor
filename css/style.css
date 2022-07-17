@@ -54,11 +54,19 @@ select {
   --dark-blue: hsl(212, 21%, 14%);
   --grayish--blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
+  --container-bg: #faf0e6;
+  --text-gray: #aaa;
+  --text-light-dark: #1d1d23;
 }
 
 body {
   font-family: 'Fraunces', serif;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
 }
 
 p {
@@ -70,4 +78,121 @@ p {
   max-width: 1440px;
   width: 80%;
   margin-inline: auto;
+}
+
+/** Product Preview Card Component */
+.card-area {
+  padding: 7rem 10rem;
+  background-color: var(--cream);
+  border-radius: 8px;
+}
+
+.card-content {
+  max-width: 850px;
+  min-height: 550px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+/* .card-img,
+.card-text {
+  flex: 1;
+} */
+
+.card-img img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+}
+
+.card-text {
+  padding: 2.1rem;
+}
+
+.card-text h4 {
+  color: var(--text-gray);
+  padding: 0.2rem 0 2rem;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+.card-text .card-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  line-height: 48px;
+}
+
+.card-text p {
+  font-size: 15px;
+  color: var(--text-light-dark);
+  line-height: 26px;
+  padding: 2rem 0;
+  width: 95%;
+}
+
+.card-text .price {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-text .price h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  line-height: 48px;
+  color: var(--dark-cyan);
+}
+
+.card-text .price .previous-price {
+  font-size: 15px;
+  text-decoration: line-through;
+}
+
+a.card-btn {
+  /* display: inline-block; */
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  padding: 1.1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  transition: 0.3s ease;
+}
+
+a.card-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+/** Responsiveness */
+
+/** Media Query */
+@media (max-width: 575px) {
+  .card-area {
+    padding: 2rem 1rem;
+  }
+
+  .card-content {
+    grid-template-columns: 1fr;
+    margin-top: 10rem;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .card-text .card-heading {
+    font-size: 1.9rem;
+    line-height: 35px;
+  }
 }
